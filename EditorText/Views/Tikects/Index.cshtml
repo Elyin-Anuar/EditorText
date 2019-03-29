@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EditorText.Models.Tikect>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeIncident)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionIncident)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateIncident)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocumentImage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeIncident)
+        </td>
+        <td>
+            @*Html.DisplayFor(modelItem => item.DescriptionIncident)*@
+            @Html.Raw(item.DescriptionIncident)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateIncident)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocumentImage)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TikectId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TikectId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TikectId })
+        </td>
+    </tr>
+}
+
+</table>

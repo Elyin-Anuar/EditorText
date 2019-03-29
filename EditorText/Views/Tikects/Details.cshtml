@@ -1,0 +1,51 @@
+﻿@model EditorText.Models.Tikect
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tikect</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeIncident)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeIncident)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionIncident)
+        </dt>
+
+        <dd>
+            @*Html.DisplayFor(model => model.DescriptionIncident)*@
+            @Html.Raw(Model.DescriptionIncident)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateIncident)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateIncident)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocumentImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocumentImage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TikectId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
